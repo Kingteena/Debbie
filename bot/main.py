@@ -7,7 +7,7 @@ import server
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix="!")
-TOKEN = os.getenv("DISCORD_TOKEN")
+DISCORD_BOT_TOKEN = os.getenv("DISCORD_TOKEN")
 
 headers_cookie = os.getenv("ATERNOS_COOKIE")
 ATERNOS_TOKEN = os.getenv("ATERNOS_TOKEN")
