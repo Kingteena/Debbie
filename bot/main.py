@@ -8,13 +8,22 @@ from discord.ext import commands
 bot = commands.Bot(command_prefix="!")
 TOKEN = os.getenv("DISCORD_TOKEN")
 
+headers_cookie = os.getenv("ATERNOS_COOKIE")
+ATERNOS_TOKEN = os.getenv("ATERNOS_TOKEN")
+server = AternosAPI(headers_cookie, ATERNOS_TOKEN)
+
 @bot.event
 async def on_ready():
-    print(f"Logged in as {bot.user.name}({bot.user.id})")
+    print(f'{bot.user.name} has connected to Discord!')
 
-@bot.command()
-async def ping(ctx):
-    await ctx.send("pong")
 
-server.server()
-bot.run(TOKEN)
+@bot.command(name='start')
+async def start(ctx):
+    await ctx.send(server.StartServer())
+
+@bot.command(name="status")
+async def status(ctx):
+    await ctx.send(server.GetStatus())
+
+
+bot.run(DISCORD_BOT_TOKEN)
