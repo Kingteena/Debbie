@@ -1,4 +1,5 @@
 import discord
+from aternosapi import AternosAPI
 import os
 #import pynacl
 #import dnspython
