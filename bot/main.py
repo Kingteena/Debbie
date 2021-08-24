@@ -5,6 +5,9 @@ import os
 #import dnspython
 import server
 from discord.ext import commands
+from dotenv import load_dotenv
+
+load_dotenv()
 
 bot = commands.Bot(command_prefix="!")
 DISCORD_BOT_TOKEN = os.getenv("DISCORD_TOKEN")
