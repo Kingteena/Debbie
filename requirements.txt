@@ -3,5 +3,5 @@ flask
 python-dotenv
 PyNaCl
 dnspython
-AternosAPI
-python-dotenv
+AternosAPI==1.2.0
+
